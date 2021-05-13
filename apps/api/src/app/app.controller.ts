@@ -12,4 +12,14 @@ export class AppController {
   getData(): Message {
     return this.appService.getData();
   }
+
+  @Get('module1')
+  getDataFromModule1(): Message {
+    return this.appService.getDataFromModule1();
+  }
+
+  @Get('module2')
+  getDataFromModule2(): Message {
+    return this.appService.getDataFromModule2();
+  }
 }

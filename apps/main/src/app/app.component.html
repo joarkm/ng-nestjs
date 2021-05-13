@@ -1,9 +1,7 @@
 <div style="text-align: center">
-  <h1>Welcome to main!</h1>
-  <img
-    width="450"
-    src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png"
-    alt="Nx - Powerful, Extensible Dev Tools"
-  />
+  <ul>
+    <li (click)="useModule(1)">Module 1</li>
+    <li (click)="useModule(2)">Module 2</li>
+  </ul>
 </div>
-<div>Message: {{ hello$ | async | json }}</div>
+<div *ngIf="data">Message: {{ data.message | json }}</div>

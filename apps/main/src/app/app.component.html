@@ -1,7 +1,8 @@
-<div style="text-align: center">
-  <ul>
-    <li (click)="useModule(1)">Module 1</li>
-    <li (click)="useModule(2)">Module 2</li>
-  </ul>
-</div>
-<div *ngIf="data">Message: {{ data.message | json }}</div>
+<mat-nav-list>
+  <a mat-list-item (click)="useModule(1)">Module 1</a>
+  <a mat-list-item (click)="useModule(2)">Module 2</a>
+</mat-nav-list>
+
+<ng-container *ngIf="data">
+  <pre>{{ { 'Message': data.message } | json }}</pre>
+</ng-container>

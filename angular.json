@@ -48,7 +48,10 @@
             "tsConfig": "apps/main/tsconfig.app.json",
             "aot": true,
             "assets": ["apps/main/src/favicon.ico", "apps/main/src/assets"],
-            "styles": ["./node_modules/@angular/material/prebuilt-themes/purple-green.css", "apps/main/src/styles.scss"],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
+              "apps/main/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -203,6 +206,31 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["libs/api-interfaces/**/*.ts"]
+          }
+        }
+      }
+    },
+    "core": {
+      "projectType": "library",
+      "root": "libs/core",
+      "sourceRoot": "libs/core/src",
+      "prefix": "nx-workspace",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/core/src/**/*.ts",
+              "libs/core/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/core"],
+          "options": {
+            "jestConfig": "libs/core/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }

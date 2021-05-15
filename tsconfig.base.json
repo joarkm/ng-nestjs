@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@nx-workspace/api-interfaces": ["libs/api-interfaces/src/index.ts"],
-      "@nx-workspace/core": ["libs/core/src/index.ts"]
+      "@nx-workspace/core": ["libs/core/src/index.ts"],
+      "my-ui": ["libs/ui-lib/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

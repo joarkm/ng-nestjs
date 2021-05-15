@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, HttpCode } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 
 import { Message } from '@nx-workspace/api-interfaces';
@@ -21,6 +21,7 @@ export class AppController {
   }
 
   @Get('module2')
+  @HttpCode(401)
   getDataFromModule2(): Message {
     return this.appService.getDataFromModule2();
   }

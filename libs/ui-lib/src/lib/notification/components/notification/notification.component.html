@@ -1,6 +1,6 @@
 <div
     [@notificationAnimator]="animationState" (@notificationAnimator.done)="resetAnimationState()"
-    (click)="close($event)"
+    (swipeleft)="onSwipeLeft()" (swiperight)="onSwipeRight()"
     class="notification"
     [ngClass]="{
     'notification--info':  notificationType === NotificationType.INFO,

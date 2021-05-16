@@ -35,7 +35,16 @@ export class NotificationComponent {
     e.preventDefault();
     e.stopPropagation();
     this.closed.emit();
+  }
+
+  public onSwipeLeft(): void {
+    this.startAnimation('slideOutLeft');
+    this.closed.emit();
+  }
+  
+  public onSwipeRight(): void {
     this.startAnimation('slideOutRight');
+    this.closed.emit();
   }
 
   startAnimation(state: string): void {

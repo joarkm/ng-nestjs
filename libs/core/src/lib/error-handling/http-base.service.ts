@@ -8,7 +8,6 @@ export class HttpBaseService {
     protected handleError(error: HttpErrorResponse): Observable<any> {
         console.error('Server error:', error);
         const parsedError = this.httpErrorMessageService.parseHttpErrorMessage(error);
-        alert(parsedError.errorMessage);
         return throwError(parsedError);
     }
 }

@@ -1,0 +1,89 @@
+.notification {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    
+    // &--automaticallyCloses {
+    //     grid-template-columns: 1fr auto 1fr 1fr;
+    // }
+
+    &--clickable {
+        cursor: pointer;
+    }
+
+    padding: 15px;
+    border-radius: 5px;
+
+    color: white;
+
+    &--info {
+        background-color: skyblue;
+    }
+    &--success {
+        background-color: green;
+    }
+    &--warning {
+        background-color: orange;
+    }
+    &--error {
+        background-color: red;
+    }
+
+    &__close {
+        cursor: pointer;
+    }
+
+    &__counter {
+        display: inline-block;
+        line-height: 24px;
+        font-size: 10px;
+        color: white;
+    }
+
+    &__countdown {
+        position: relative;
+        height: 24px;
+        width: 24px;
+        margin-right: 12px;
+        text-align: center;
+    }
+
+    &__countdown-ring {
+        transform: rotateZ(-89deg);
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 24px;
+        height: 24px;
+    
+        circle {
+          stroke-dasharray: 68px;
+          stroke-dashoffset: 0px;
+          stroke-linecap: round;
+          stroke-width: 2px;
+          stroke: white;
+          fill: none;
+          animation: countdown linear infinite forwards;
+        }
+    }
+
+    &__right-part {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    &--closing {
+        transition: transform 0.5s, opacity 0.5s;
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+
+@keyframes countdown {
+    from {
+      stroke-dashoffset: 0px;
+    }
+    to {
+      stroke-dashoffset: 68px;
+    }
+  }

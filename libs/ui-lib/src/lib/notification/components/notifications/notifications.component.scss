@@ -1,0 +1,8 @@
+.notification-list {
+    display: flex;
+    flex-direction: column;
+
+    &__list-item {
+        padding-bottom: 15px;
+    }
+}

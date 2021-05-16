@@ -1,0 +1,10 @@
+<ng-container *ngIf="notifications && notifications.length">
+    <div class="notification-list">
+        <my-ui-notification class="notification-list__list-item" *ngFor="let notification of notifications; let index=index"
+            [notificationType]="notification.type" [message]="notification.message"
+            [totalDuration]="notification.options.durationInSeconds" [remainingDuration]="notification.remainingDurationInSeconds"
+            [automaticallyCloses]="notification.automaticallyCloses" [isClosing]="notification.isClosing" [closeOnClick]="notification.options.closeOnClick"
+            (closed)="onNotificationClose(notification.id);" (click)="onNotificationClicked($event, index);">
+        </my-ui-notification>
+    </div>
+</ng-container>

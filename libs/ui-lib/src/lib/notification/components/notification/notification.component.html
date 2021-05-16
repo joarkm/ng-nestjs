@@ -1,0 +1,25 @@
+<div class="notification" [ngClass]="{
+    'notification--info':  notificationType === NotificationType.INFO,
+    'notification--success':  notificationType === NotificationType.SUCCESS,
+    'notification--warning':  notificationType === NotificationType.WARNING,
+    'notification--error':  notificationType === NotificationType.ERROR,
+    'notification--automaticallyCloses': automaticallyCloses,
+    'notification--closing': isClosing,
+    'notification--clickable': closeOnClick
+}">
+    <span>{{ notificationType | titlecase }}</span>
+    <span>{{ message }}</span>
+
+    <div class="notification__right-part">
+        <span class="notification__close" (click)="close($event);">X</span>
+        <ng-container *ngIf="automaticallyCloses && remainingDuration > 0">
+            <div class="notification__countdown">
+                <span class="notification__counter">{{ remainingDuration }}</span>
+                <svg class="notification__countdown-ring">
+                    <circle r="10.8" cx="12" cy="12" [style.animation-duration]="totalDuration + 's'">
+                    </circle>
+                </svg>
+            </div>
+        </ng-container>
+    </div>
+</div>

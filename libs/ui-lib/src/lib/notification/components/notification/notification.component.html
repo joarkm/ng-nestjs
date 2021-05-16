@@ -1,4 +1,8 @@
-<div class="notification" [ngClass]="{
+<div
+    [@notificationAnimator]="animationState" (@notificationAnimator.done)="resetAnimationState()"
+    (click)="close($event)"
+    class="notification"
+    [ngClass]="{
     'notification--info':  notificationType === NotificationType.INFO,
     'notification--success':  notificationType === NotificationType.SUCCESS,
     'notification--warning':  notificationType === NotificationType.WARNING,
